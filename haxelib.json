@@ -1,0 +1,11 @@
+{
+    "name": "hxml",
+    "url": "https://github.com/chipshort/hxml",
+    "license": "MIT",
+    "tags": [ "hxml", "parser", "reader", "format", "cross", "neko", "flash", "js", "cpp", "java", "php" ],
+    "description": "Hxml parser for Haxe.",
+    "version": "0.0.1",
+    "releasenote": "First release",
+    "contributors": [ "chipshort" ],
+    "dependencies": {}
+}

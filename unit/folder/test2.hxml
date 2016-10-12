@@ -1,0 +1,6 @@
+-cp src
+-main test.Main
+--each
+-cp test
+--each
+-js test.js

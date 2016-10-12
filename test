@@ -1,0 +1,7 @@
+#!/bin/bash
+
+haxe test.hxml
+
+neko bin/Main.n
+
+rm -rf bin

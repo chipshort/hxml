@@ -144,6 +144,26 @@ abstract Hxml(Array<Arg>) from Array<Arg> to Array<Arg>
         return targets;
     }
     
+    public function toString(separator = "\n") : String
+    {
+        var result = [];
+        
+        for (arg in this) {
+            switch(arg) {
+                case StandardArg(arg, params):
+                    result.push(arg + " " + params.join(" "));
+                case HxmlInclude(file):
+                    result.push(file);
+                case Module(module):
+                    result.push(module);
+                case Comment(line):
+                    result.push("#" + line);
+            }
+        }
+        
+        return result.join(separator);
+    }
+    
     //TODO: throw on wrong argument number
     /**
             Parses the given hxml content.

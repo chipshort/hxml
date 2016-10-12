@@ -1,6 +1,6 @@
 -cp unit
 
--main test.Main
+-main test.Test
 
 # -js bin/Main.js
 -neko bin/Main.n

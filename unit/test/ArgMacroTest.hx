@@ -2,7 +2,7 @@ package test;
 
 import hxml.ArgMacro;
 
-class ArgMacroTest extends haxe.unit.TestCase
+class ArgMacroTest extends test.Test
 {
     public function testCp() : Void
     {

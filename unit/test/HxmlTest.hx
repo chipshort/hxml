@@ -2,7 +2,7 @@ package test;
 
 import hxml.Hxml;
 
-class HxmlTest extends haxe.unit.TestCase
+class HxmlTest extends test.Test
 {
     public function testBasic() : Void
     {
@@ -45,7 +45,7 @@ class HxmlTest extends haxe.unit.TestCase
         }
         catch (e : Dynamic) {
         }
-        assertEquals(Std.string([]), Std.string(result));
+        assertDeepEq([], result);
     }
     
     public function testComment() : Void
@@ -57,7 +57,7 @@ class HxmlTest extends haxe.unit.TestCase
             Comment("-D js-es5")
         ];
         
-        assertEquals(Std.string(hxml), Std.string(expected));
+        assertDeepEq(hxml, expected);
     }
     
     public function testTargets() : Void
@@ -87,6 +87,18 @@ class HxmlTest extends haxe.unit.TestCase
                 StandardArg("-main", ["Main"])
             ]), Std.string(target.slice(0, 2)));
         }
+    }
+    
+    public function testToString() : Void
+    {
+        var input = "-cp src\n-main Main\n-js test.js";
+        var hxml = Hxml.parse(input);
+        var output = hxml.toString();
+        assertEquals(input, output);
+        
+        input = StringTools.replace(input, "\n", " ");
+        output = hxml.toString(" ");
+        assertEquals(input, output);
     }
     
     #if sys

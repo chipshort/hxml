@@ -1,7 +1,5 @@
--cp src
 -cp unit
 
-test.Main
 -main test.Main
 
 # -js bin/Main.js
